@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <!-- For odd pages -->
+        <fo:simple-page-master master-name="a4page-odd" page-width="21cm" page-height="29.7cm">
+            <fo:region-body margin-left="4cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm" border="1pt solid black"/>
+            <fo:region-before border="1pt solid red" extent="1cm" region-name="odd-header" />
+            <fo:region-after border="1pt solid blue" extent="1cm" region-name="odd-footer"/>
+            <fo:region-start border="1pt solid green" extent="3cm" />
+            <fo:region-end border="1pt solid magenta" extent="1cm" />
+        </fo:simple-page-master>
+        <!-- For even pages -->
+        <fo:simple-page-master master-name="a4page-even" page-width="21cm" page-height="29.7cm">
+            <fo:region-body margin-left="2cm" margin-right="4cm" margin-top="4cm" margin-bottom="4cm" border="1pt solid black"/>
+            <fo:region-before border="1pt solid red" extent="1cm" region-name="even-header"/>
+            <fo:region-after border="1pt solid blue" extent="1cm" region-name="even-footer"/>
+            <fo:region-start border="1pt solid green" extent="1cm" />
+            <fo:region-end border="1pt solid magenta" extent="3cm" />
+        </fo:simple-page-master>
+        <fo:simple-page-master master-name="a4page-blank-odd" page-width="21cm" page-height="29.7cm">
+            <fo:region-body margin-left="4cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm" region-name="blank-content"/>
+            <fo:region-before extent="1cm" border="1pt dotted red" />
+            <fo:region-after extent="1cm" border="1pt dotted blue" />
+            <fo:region-start border="1pt dotted green" extent="3cm" />
+            <fo:region-end  border="1pt dotted magenta" extent="1cm" />
+        </fo:simple-page-master>
+        <fo:simple-page-master master-name="a4page-blank-even" page-width="21cm" page-height="29.7cm">
+            <fo:region-body margin-left="4cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm" region-name="blank-content"/>
+            <fo:region-before extent="1cm" border="1pt dotted red" />
+            <fo:region-after extent="1cm" border="1pt dotted blue" />
+            <fo:region-start border="1pt dotted green" extent="1cm" />
+            <fo:region-end  border="1pt dotted magenta" extent="3cm" />
+        </fo:simple-page-master>
+        <fo:page-sequence-master master-name="standard-a4">
+            <fo:repeatable-page-master-reference master-reference="a4page-odd"/>
+        </fo:page-sequence-master>
+        <fo:page-sequence-master master-name="last-a4">
+            <fo:repeatable-page-master-alternatives>
+                <fo:conditional-page-master-reference master-reference="a4page-odd" blank-or-not-blank="not-blank" odd-or-even="odd" />
+                <fo:conditional-page-master-reference master-reference="a4page-even" blank-or-not-blank="not-blank" odd-or-even="even"/>
+                <fo:conditional-page-master-reference master-reference="a4page-blank-odd" blank-or-not-blank="blank" odd-or-even="odd" />
+                <fo:conditional-page-master-reference master-reference="a4page-blank-even" blank-or-not-blank="blank" odd-or-even="even" />
+            </fo:repeatable-page-master-alternatives>
+        </fo:page-sequence-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="last-a4" force-page-count="odd">
+        <fo:static-content flow-name="odd-header">
+            <fo:block text-align="center">HEADER (odd)</fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="odd-footer">
+            <fo:block text-align="center">FOOTER (odd) </fo:block>
+            <fo:block text-align="right">Page <fo:page-number /></fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="even-header">
+            <fo:block text-align="center">HEADER (even)</fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="even-footer">
+            <fo:block text-align="center">FOOTER (even) </fo:block>
+            <fo:block text-align="left">Page <fo:page-number /></fo:block>
+        </fo:static-content>
+        <!--<fo:static-content flow-name="xsl-region-start">
+            <fo:block text-align="center">START</fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-end">
+            <fo:block text-align="center">END</fo:block>
+        </fo:static-content>-->
+        <fo:static-content flow-name="blank-content">
+            <fo:block-container height="21.7cm" border="1pt solid orange" display-align="center">
+            <fo:block text-align="center">INTENTIONALLY LEFT BLANK</fo:block>
+            </fo:block-container>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body" font-size="20pt" font-family="Open sans"
+            text-align="justify">
+            <fo:block>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere
+                aliquet diam, nec fermentum leo tincidunt id. Integer nec urna condimentum, luctus
+                massa eu, malesuada lacus. Fusce convallis orci sed justo ultricies, ac dapibus
+                velit tristique. Donec eget odio quis libero rhoncus hendrerit at at tortor. Nullam
+                sit amet nisl eget ipsum ornare sagittis vel ac velit. Integer sit amet commodo
+                turpis. Phasellus quis faucibus orci, eget convallis arcu. Nunc aliquam blandit diam
+                sed mattis. Ut pretium aliquam arcu, porta luctus est consectetur non. Pellentesque
+                porta volutpat lorem, quis ullamcorper arcu ultrices vel. </fo:block>
+            <fo:block> Nullam tincidunt lorem nec velit mattis, in feugiat orci tristique. Morbi
+                laoreet hendrerit pulvinar. In neque nibh, dapibus at magna in, congue blandit nisl.
+                In aliquet est ex, pellentesque lobortis ex eleifend at. Proin iaculis semper libero
+                quis posuere. Mauris ultricies vel nunc non molestie. In quis ornare velit, vel
+                mollis felis. Quisque pulvinar, nunc in commodo bibendum, nisl nisi tincidunt
+                turpis, sit amet sodales lorem libero quis tortor. Curabitur at convallis lacus. </fo:block>
+            <fo:block>Proin aliquet libero ac ultrices ullamcorper. Mauris egestas nisl et
+                ullamcorper tristique. Mauris luctus pulvinar libero. Curabitur feugiat nisl eu nisi
+                ultrices, ut ultricies nisi pharetra. Pellentesque in rutrum lacus, nec faucibus
+                dolor. Ut rutrum augue hendrerit, laoreet magna interdum, maximus erat. Vestibulum
+                varius, est eget faucibus tincidunt, neque ante semper dolor, laoreet tincidunt ex
+                sapien a lacus. Phasellus euismod semper velit, non consequat nibh dapibus eget.
+                Etiam id nulla quis arcu tincidunt venenatis sit amet ut ex. Maecenas ut ante ac
+                quam cursus blandit. </fo:block>
+            <fo:block>Vivamus accumsan odio eget erat sagittis lobortis. Nullam et consequat libero,
+                ut semper neque. Ut sit amet lobortis est. Maecenas at mi et sapien hendrerit
+                laoreet vel eget arcu. Nulla ut ornare lacus. Curabitur vitae elementum leo, non
+                convallis erat. Sed ut dolor lacinia, iaculis ante quis, congue leo. </fo:block>
+            <fo:block>Mauris ornare elit vel mi mollis egestas. Morbi elementum nibh sed odio
+                pulvinar tristique. Sed laoreet risus eget ipsum posuere rutrum. Fusce est ex,
+                iaculis non congue in, finibus eu turpis. Pellentesque et purus tincidunt magna
+                ultrices rhoncus. Etiam quis aliquam tellus. Proin pharetra, arcu ac varius
+                porttitor, ipsum purus porttitor eros, eu malesuada ex tellus sed neque. Vivamus
+                facilisis dolor neque, ut suscipit lorem iaculis et. Quisque sit amet ex dictum
+                dolor vulputate posuere a a erat. </fo:block>
+            <fo:block>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                turpis egestas. Proin nec finibus elit. Nam hendrerit tristique enim sit amet
+                malesuada. Vestibulum nec nisl convallis, iaculis urna vel, bibendum purus. Praesent
+                suscipit ipsum id purus iaculis elementum. Duis fermentum vestibulum nunc, ac
+                vehicula sem porttitor et. Nunc libero ex, accumsan id velit quis, ultrices ultrices
+                erat. Duis ultrices, erat a aliquet accumsan, ipsum nisi dignissim dolor, ut
+                ultricies orci quam a turpis. Vivamus et rutrum elit, nec eleifend mauris.
+                Vestibulum suscipit dictum arcu ut finibus. Vestibulum ut elit sit amet ex ornare
+                cursus nec a est. Quisque vulputate, nunc sed egestas ultrices, nibh libero aliquam
+                purus, eget porttitor lacus ex sed nisl.</fo:block>
+            <fo:block>Sed porttitor porttitor vestibulum. Maecenas placerat, risus in laoreet
+                varius, nibh est consequat velit, at consequat erat nibh eget nisl. Vestibulum sit
+                amet viverra velit. Sed volutpat nisl quis quam finibus pharetra. Integer ut aliquam
+                dui. Nulla in quam urna. Vivamus ornare massa sit amet est blandit, non congue
+                ligula pellentesque. Integer ultricies arcu mi, ut auctor sapien cursus id. Vivamus
+                tincidunt molestie tortor, sed mollis erat condimentum in. Morbi elementum mattis
+                est sed semper. Aliquam sed sem ac risus vestibulum molestie. Praesent ac mi
+                volutpat, pellentesque mauris sed, congue velit. Mauris venenatis urna in enim
+                luctus, ut ultricies orci ornare. Aliquam faucibus maximus tristique. Phasellus
+                vulputate aliquet lectus, et lacinia velit rhoncus non. Donec eleifend odio in odio
+                accumsan, at ultrices libero mollis.</fo:block>
+            <!--<fo:block>Suspendisse vel elit non ante condimentum vestibulum. Duis porta, mauris
+                feugiat volutpat malesuada, mi lectus egestas dolor, quis vulputate sem turpis nec
+                risus. Nulla facilisi. Etiam facilisis nunc risus, id malesuada ex elementum non.
+                Curabitur vestibulum, felis elementum malesuada feugiat, nibh felis tincidunt justo,
+                id porta velit odio sed massa. Phasellus sed congue lacus, eget porttitor sapien.
+                Proin nec enim aliquam, auctor massa quis, commodo nulla. Sed eget dui eu dui
+                efficitur viverra.</fo:block>
+            <fo:block>Proin placerat, sapien quis pulvinar consequat, nisi neque scelerisque ex, non
+                accumsan enim elit vitae nisi. Curabitur vehicula sollicitudin tellus vel cursus.
+                Etiam a turpis id enim suscipit fringilla vel et nisl. Sed quis nunc lobortis,
+                tincidunt libero sed, iaculis tellus. In finibus, nisl eget lacinia hendrerit,
+                tellus eros lobortis ipsum, sit amet fringilla nisl dui nec tortor. Nunc sit amet
+                metus volutpat, volutpat arcu vel, porttitor eros. Phasellus magna odio, ornare vel
+                leo at, porta malesuada nunc. Phasellus sit amet sem imperdiet, scelerisque nisi ac,
+                malesuada mi. Aenean sed tortor ut elit ullamcorper consectetur. Curabitur eu
+                blandit ligula. Proin hendrerit molestie luctus. Vestibulum at massa tempor, rutrum
+                magna sit amet, volutpat lacus. Phasellus id sapien elementum, ultricies tellus in,
+                convallis dui.</fo:block>-->
+        </fo:flow>
+    </fo:page-sequence>
+    <fo:page-sequence master-reference="last-a4" initial-page-number="auto-even">
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block text-align="center">HEADER LAST</fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block text-align="center">FOOTER LAST</fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-start">
+            <fo:block text-align="center">START LAST</fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-end">
+            <fo:block text-align="center">END LAST</fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="blank-content">
+            <fo:block height="100%" border="1pt solid orange">INTENTIONALLY LEFT BLANK</fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body">
+            <fo:block>(BACK COVER)</fo:block>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>
