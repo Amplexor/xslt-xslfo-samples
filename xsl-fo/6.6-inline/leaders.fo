@@ -3,13 +3,13 @@
     <fo:layout-master-set>
         <fo:simple-page-master master-name="a4page" page-width="21cm" page-height="29.7cm">
             <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm" />
-            <fo:region-before extent="1.5cm" /> <!-- @region-name=... -->
+            <fo:region-before extent="1.5cm" />
             <fo:region-after extent="1.5cm" />
             <fo:region-start extent="1.5cm" />
             <fo:region-end extent="1.5cm" />
         </fo:simple-page-master>
     </fo:layout-master-set>
-    <fo:page-sequence master-reference="a4page" font-family="Open sans">
+    <fo:page-sequence master-reference="a4page" font-family="Open sans, Arial, sans-serif">
         
         <fo:static-content flow-name="xsl-region-before">
             <fo:block text-align="center"><fo:inline font-family="Consolas, monospace">&lt;fo:leader&gt;</fo:inline></fo:block>
@@ -23,14 +23,14 @@
             <fo:block text-align="center" font-size="24pt" font-weight="bold" color="#50276E"><fo:inline>fo:leader</fo:inline></fo:block>
             
             <fo:block>
-                A simple leader <fo:leader leader-pattern="rule" /> BBBB
+                A simple leader: <fo:leader leader-pattern="rule" />.
             </fo:block>
             <fo:block>
-                A simple leader, with length <fo:leader leader-pattern="rule" leader-length="5cm" /> 5cm.
+                A simple leader, with length: <fo:leader leader-pattern="rule" leader-length="5cm" /> 5cm.
             </fo:block>
             
             <fo:block text-align-last="justify">
-                Aligning on the right <fo:leader  leader-pattern="dots" rule-style="dotted" rule-thickness="2pt" /> BBBB
+                Aligning on the right <fo:leader  leader-pattern="dots" rule-style="dotted" rule-thickness="2pt" /> ◄.
             </fo:block>
             
             <fo:block font-weight="bold">Various styles of leader rules</fo:block>
@@ -41,31 +41,31 @@
             
             
             <fo:block text-align-last="justify">
-                This leader is <fo:leader  leader-pattern="rule" rule-style="none" rule-thickness="2pt" /> none
+                This leader is <fo:leader leader-pattern="rule" rule-style="none" rule-thickness="2pt" /> none
             </fo:block>
             <fo:block text-align-last="justify">
-                This leader is <fo:leader  leader-pattern="rule" rule-style="dotted" rule-thickness="2pt" /> dotted
+                This leader is <fo:leader leader-pattern="rule" rule-style="dotted" rule-thickness="2pt" /> dotted
             </fo:block>
             <fo:block text-align-last="justify">
-                This leader is <fo:leader  leader-pattern="rule" rule-style="dashed" rule-thickness="2pt" /> dashed
+                This leader is <fo:leader leader-pattern="rule" rule-style="dashed" rule-thickness="2pt" /> dashed
             </fo:block>
             <fo:block text-align-last="justify">
-                This leader is <fo:leader  leader-pattern="rule" rule-style="solid" rule-thickness="2pt" /> solid
+                This leader is <fo:leader leader-pattern="rule" rule-style="solid" rule-thickness="2pt" /> solid
             </fo:block>
             <fo:block text-align-last="justify">
-                This leader is <fo:leader  leader-pattern="rule" rule-style="double" rule-thickness="2pt" /> double
+                This leader is <fo:leader leader-pattern="rule" rule-style="double" rule-thickness="2pt" /> double
             </fo:block>
             <fo:block text-align-last="justify">
-                This leader is <fo:leader  leader-pattern="rule" rule-style="groove" rule-thickness="2pt" /> groove
+                This leader is <fo:leader leader-pattern="rule" rule-style="groove" rule-thickness="2pt" /> groove
             </fo:block>
             <fo:block text-align-last="justify">
-                This leader is <fo:leader  leader-pattern="rule" rule-style="ridge" rule-thickness="2pt" /> ridge
+                This leader is <fo:leader leader-pattern="rule" rule-style="ridge" rule-thickness="2pt" /> ridge
             </fo:block>
             <fo:block text-align-last="justify">
-                This leader is <fo:leader  leader-pattern="rule" rule-style="solid" rule-thickness="1em" /> very thick
+                This leader is <fo:leader leader-pattern="rule" rule-style="solid" rule-thickness="1em" /> very thick
             </fo:block>
             <fo:block text-align-last="justify">
-                This leader is <fo:leader  leader-pattern="use-content" rule-style="dashed" rule-thickness="2pt" >*</fo:leader> using content.
+                This leader is <fo:leader leader-pattern="use-content" rule-style="dashed" rule-thickness="2pt" >*</fo:leader> using content.
             </fo:block>
             
             
