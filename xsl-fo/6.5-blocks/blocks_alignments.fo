@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="a4page" page-width="21cm" page-height="29.7cm">
+            <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm" />
+            <fo:region-before extent="1.5cm" /> 
+            <fo:region-after extent="1.5cm" />
+            <fo:region-start extent="1.5cm" />
+            <fo:region-end extent="1.5cm" />
+        </fo:simple-page-master>
+    </fo:layout-master-set>
+    <fo:page-sequence master-reference="a4page" font-family="Open sans, Arial, sans-serif">
+        
+        <fo:static-content flow-name="xsl-region-before">
+            <fo:block text-align="center"><fo:inline font-family="Consolas, monospace"
+                    >&lt;fo:block&gt;</fo:inline> (with alignments)</fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+            <fo:block><fo:basic-link external-destination="https://www.w3.org/TR/xsl11/">https://www.w3.org/TR/xsl11/</fo:basic-link></fo:block>
+            <fo:block text-align="right">Page <fo:page-number/></fo:block>
+        </fo:static-content>
+        <fo:flow flow-name="xsl-region-body" font-size="16pt" text-align="justify">
+            
+            <fo:block text-align="center" font-size="24pt" font-weight="bold" color="#50276E"
+                    ><fo:inline>fo:block</fo:inline> with alignments</fo:block>
+            
+            
+            
+            
+            
+            <fo:block font-weight="bold">left</fo:block>
+            <fo:block text-align="left" border="1pt dashed gray" margin="3mm" padding="3mm">Quisque condimentum congue erat ut maximus. Etiam mattis sapien et pulvinar gravida. </fo:block>
+            
+            <fo:block font-weight="bold">center</fo:block>
+            <fo:block text-align="center" border="1pt dashed gray" margin="3mm" padding="3mm">Nulla euismod quam a tortor consequat hendrerit. Mauris egestas enim ut nibh congue sagittis. </fo:block>
+            
+            <fo:block font-weight="bold">right</fo:block>
+            <fo:block text-align="right" border="1pt dashed gray" margin="3mm" padding="3mm">Quisque finibus sapien sit amet elit viverra, sit amet imperdiet justo faucibus. Aenean posuere purus vitae felis laoreet lobortis. </fo:block>
+            
+            <fo:block font-weight="bold">justify</fo:block>
+            <fo:block text-align="justify" border="1pt dashed gray" margin="3mm" padding="3mm">Phasellus at nisl fermentum, imperdiet sem in, tristique metus. Proin in volutpat risus, quis porttitor turpis. Donec ullamcorper ultrices luctus. Integer id diam malesuada, elementum neque vitae, blandit lorem. </fo:block>
+            
+            <fo:block font-weight="bold">start</fo:block>
+            <fo:block text-align="start" border="1pt dashed gray" margin="3mm" padding="3mm">In vel rhoncus tortor, et luctus tellus. Vivamus eget maximus diam, convallis tincidunt quam. Suspendisse eget condimentum nisl, at porta tortor. </fo:block>
+            
+            <fo:block font-weight="bold">end</fo:block>
+            <fo:block text-align="end" border="1pt dashed gray" margin="3mm" padding="3mm">Vestibulum ac turpis faucibus, rhoncus urna eget, lobortis ipsum.</fo:block>
+            
+            <!-- -->
+            <fo:block-container width="10cm" height="7cm" border="1pt dashed gray" margin="3mm" padding="3mm" display-align="before">
+                <fo:block margin="0mm">
+                    at the top
+                </fo:block>
+            </fo:block-container>
+            <fo:block-container width="10cm" height="7cm" border="1pt dashed gray" margin="3mm" padding="3mm" display-align="center">
+                <fo:block margin="0mm">
+                    at the center
+                </fo:block>
+            </fo:block-container>
+            <fo:block-container width="10cm" height="7cm" border="1pt dashed gray" margin="3mm" padding="3mm" display-align="after">
+                <fo:block margin="0mm">
+                    at the bottom
+                </fo:block>
+            </fo:block-container>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>
