@@ -25,7 +25,7 @@
                     ><fo:inline>fo:block</fo:inline> with alignments</fo:block>
             
             
-            
+            <fo:block font-weight="bold" color="#886CA6">1. Horizontal alignments</fo:block>
             
             
             <fo:block font-weight="bold">left</fo:block>
@@ -47,6 +47,7 @@
             <fo:block text-align="end" border="1pt dashed gray" margin="3mm" padding="3mm">Vestibulum ac turpis faucibus, rhoncus urna eget, lobortis ipsum.</fo:block>
             
             <!-- -->
+            <fo:block font-weight="bold" color="#886CA6">2. Vertical alignments</fo:block>
             <fo:block-container width="10cm" height="7cm" border="1pt dashed gray" margin="3mm" padding="3mm" display-align="before">
                 <fo:block margin="0mm">
                     at the top

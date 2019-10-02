@@ -2,23 +2,28 @@
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
     <fo:layout-master-set>
         <fo:simple-page-master master-name="a4page" page-width="21cm" page-height="29.7cm">
+            <!--<fo:region-body margin-left="2cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm"/>-->
             <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm" border="1pt solid gray"/>
             <fo:region-before border="1pt solid red" extent="1.5cm" /> <!-- @region-name=... -->
             <fo:region-after border="1pt solid blue" extent="1.5cm" />
             <fo:region-start border="1pt solid green" extent="1.5cm" />
             <fo:region-end border="1pt solid magenta" extent="1.5cm" />
         </fo:simple-page-master>
+        <fo:page-sequence-master master-name="single-a4">
+            <fo:single-page-master-reference master-reference="a4page"/>
+        </fo:page-sequence-master>
     </fo:layout-master-set>
-    <fo:page-sequence master-reference="a4page" font-family="Open sans">
+    <!-- all the text MUST fit in a single a4 page -->
+    <fo:page-sequence master-reference="single-a4">
         <fo:static-content flow-name="xsl-region-before">
-            <fo:block>Header</fo:block>
+            <fo:block border-bottom="2pt solid black" text-align="right">Header</fo:block>
         </fo:static-content>
         <fo:static-content flow-name="xsl-region-after">
-            <fo:block>Footer</fo:block>
+            <fo:block border-top="2pt solid black" text-align="center">Footer</fo:block>
             <fo:block text-align="right">Page <fo:page-number/></fo:block>
         </fo:static-content>
-        <fo:flow flow-name="xsl-region-body" font-size="16pt" text-align="justify">
-            <fo:block text-align="center" font-size="48pt" font-weight="bold" color="#50276E">fo:simple-page-master</fo:block>
+        <fo:flow flow-name="xsl-region-body" font-size="20pt" font-family="Open sans" text-align="justify">
+            <fo:block text-align="center" font-size="48pt" font-weight="bold" color="#50276E">fo:single-page-master-reference</fo:block>
             <fo:block>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere
                 aliquet diam, nec fermentum leo tincidunt id. Integer nec urna condimentum, luctus
                 massa eu, malesuada lacus. Fusce convallis orci sed justo ultricies, ac dapibus

@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
     <fo:layout-master-set>
-        <fo:simple-page-master master-name="a4page">
-            <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm" width="21cm" height="29.7cm"/>
-            <fo:region-before />
-            <fo:region-after />
-            <fo:region-start />
-            <fo:region-end />
+        <fo:simple-page-master master-name="a4page" page-width="21cm" page-height="29.7cm">
+            <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm" />
+            <fo:region-before border="1pt solid red" extent="1.5cm" /> <!-- @region-name=... -->
+            <fo:region-after border="1pt solid blue" extent="1.5cm" />
+            <fo:region-start border="1pt solid green" extent="1.5cm" />
+            <fo:region-end border="1pt solid magenta" extent="1.5cm" />
         </fo:simple-page-master>
         <fo:page-sequence-master master-name="repeat-a4">
             <fo:repeatable-page-master-reference master-reference="a4page"/>
         </fo:page-sequence-master>
     </fo:layout-master-set>
-    <!-- all the text MUST fit in a single a4 page -->
     <fo:page-sequence master-reference="repeat-a4">
         <fo:flow flow-name="xsl-region-body" font-size="20pt" font-family="Open sans" text-align="justify">
             <fo:block>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere
