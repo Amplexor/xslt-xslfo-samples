@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="a4page" page-width="21cm" page-height="29.7cm">
+      <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="3cm" margin-bottom="3cm"/>
+      <fo:region-before extent="1.5cm"/>
+      <fo:region-after extent="1.5cm"/>
+      <fo:region-start extent="1.5cm"/>
+      <fo:region-end extent="1.5cm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="a4page-two-columns" page-width="21cm" page-height="29.7cm">
+      <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="3cm" margin-bottom="3cm" column-count="2"/>
+      <fo:region-before extent="1.5cm"/>
+      <fo:region-after extent="1.5cm"/>
+      <fo:region-start extent="1.5cm"/>
+      <fo:region-end extent="1.5cm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="a4page-three-columns" page-width="21cm" page-height="29.7cm">
+      <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="3cm" margin-bottom="3cm" column-count="3"/>
+      <fo:region-before extent="1.5cm"/>
+      <fo:region-after extent="1.5cm"/>
+      <fo:region-start extent="1.5cm"/>
+      <fo:region-end extent="1.5cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+  
+  <fo:page-sequence master-reference="a4page" font-family="Open sans, Arial, sans-serif">
+    <!-- Header contents -->
+    <fo:static-content flow-name="xsl-region-before">
+      <fo:block-container height="100%" display-align="center">
+        <fo:block text-align="center"><fo:inline font-family="Consolas, monospace">@column-count</fo:inline></fo:block>
+        <fo:block text-align="center">Text on one column</fo:block>
+      </fo:block-container>
+    </fo:static-content>
+    
+    <!-- Footer contents -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:block>Reference: <fo:basic-link external-destination="https://www.w3.org/TR/xsl11/#column-count">https://www.w3.org/TR/xsl11/#column-count</fo:basic-link> (attribute)</fo:block>
+      <fo:block text-align="right">Page <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body" font-size="16pt" text-align="justify">
+      <fo:block text-align="center" font-size="48pt" font-weight="bold" color="#50276E">one column (default)</fo:block>
+      <fo:block>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere
+                aliquet diam, nec fermentum leo tincidunt id. Integer nec urna condimentum, luctus
+                massa eu, malesuada lacus. Fusce convallis orci sed justo ultricies, ac dapibus
+                velit tristique. Donec eget odio quis libero rhoncus hendrerit at at tortor. Nullam
+                sit amet nisl eget ipsum ornare sagittis vel ac velit. Integer sit amet commodo
+                turpis. Phasellus quis faucibus orci, eget convallis arcu. Nunc aliquam blandit diam
+                sed mattis. Ut pretium aliquam arcu, porta luctus est consectetur non. Pellentesque
+                porta volutpat lorem, quis ullamcorper arcu ultrices vel. </fo:block>
+      <fo:block> Nullam tincidunt lorem nec velit mattis, in feugiat orci tristique. Morbi
+                laoreet hendrerit pulvinar. In neque nibh, dapibus at magna in, congue blandit nisl.
+                In aliquet est ex, pellentesque lobortis ex eleifend at. Proin iaculis semper libero
+                quis posuere. Mauris ultricies vel nunc non molestie. In quis ornare velit, vel
+                mollis felis. Quisque pulvinar, nunc in commodo bibendum, nisl nisi tincidunt
+                turpis, sit amet sodales lorem libero quis tortor. Curabitur at convallis lacus. </fo:block>
+      <fo:block> Proin aliquet libero ac ultrices ullamcorper. Mauris egestas nisl et
+                ullamcorper tristique. Mauris luctus pulvinar libero. Curabitur feugiat nisl eu nisi
+                ultrices, ut ultricies nisi pharetra. Pellentesque in rutrum lacus, nec faucibus
+                dolor. Ut rutrum augue hendrerit, laoreet magna interdum, maximus erat. Vestibulum
+                varius, est eget faucibus tincidunt, neque ante semper dolor, laoreet tincidunt ex
+                sapien a lacus. Phasellus euismod semper velit, non consequat nibh dapibus eget.
+                Etiam id nulla quis arcu tincidunt venenatis sit amet ut ex. Maecenas ut ante ac
+                quam cursus blandit. </fo:block>
+      <fo:block> Vivamus accumsan odio eget erat sagittis lobortis. Nullam et consequat
+                libero, ut semper neque. Ut sit amet lobortis est. Maecenas at mi et sapien
+                hendrerit laoreet vel eget arcu. Nulla ut ornare lacus. Curabitur vitae elementum
+                leo, non convallis erat. Sed ut dolor lacinia, iaculis ante quis, congue leo. </fo:block>
+      <fo:block> Mauris ornare elit vel mi mollis egestas. Morbi elementum nibh sed odio
+                pulvinar tristique. Sed laoreet risus eget ipsum posuere rutrum. Fusce est ex,
+                iaculis non congue in, finibus eu turpis. Pellentesque et purus tincidunt magna
+                ultrices rhoncus. Etiam quis aliquam tellus. Proin pharetra, arcu ac varius
+                porttitor, ipsum purus porttitor eros, eu malesuada ex tellus sed neque. Vivamus
+                facilisis dolor neque, ut suscipit lorem iaculis et. Quisque sit amet ex dictum
+                dolor vulputate posuere a a erat. </fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  
+  <fo:page-sequence master-reference="a4page-two-columns" font-family="Open sans, Arial, sans-serif">
+    <!-- Header contents -->
+    <fo:static-content flow-name="xsl-region-before">
+      <fo:block-container height="100%" display-align="center">
+        <fo:block text-align="center"><fo:inline font-family="Consolas, monospace">@column-count</fo:inline></fo:block>
+        <fo:block text-align="center">Text on <fo:inline font-weight="bold">two</fo:inline> columns</fo:block>
+      </fo:block-container>
+    </fo:static-content>
+    <!-- Footer contents -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:block>Reference: <fo:basic-link external-destination="https://www.w3.org/TR/xsl11/#column-count">https://www.w3.org/TR/xsl11/#column-count</fo:basic-link> (attribute)</fo:block>
+      <fo:block text-align="right">Page <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body" font-size="16pt" text-align="justify">
+      <fo:block text-align="center" font-size="48pt" font-weight="bold" color="#50276E">two columns</fo:block>
+      <fo:block>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere
+                aliquet diam, nec fermentum leo tincidunt id. Integer nec urna condimentum, luctus
+                massa eu, malesuada lacus. Fusce convallis orci sed justo ultricies, ac dapibus
+                velit tristique. Donec eget odio quis libero rhoncus hendrerit at at tortor. Nullam
+                sit amet nisl eget ipsum ornare sagittis vel ac velit. Integer sit amet commodo
+                turpis. Phasellus quis faucibus orci, eget convallis arcu. Nunc aliquam blandit diam
+                sed mattis. Ut pretium aliquam arcu, porta luctus est consectetur non. Pellentesque
+                porta volutpat lorem, quis ullamcorper arcu ultrices vel. </fo:block>
+      <fo:block> Nullam tincidunt lorem nec velit mattis, in feugiat orci tristique. Morbi
+                laoreet hendrerit pulvinar. In neque nibh, dapibus at magna in, congue blandit nisl.
+                In aliquet est ex, pellentesque lobortis ex eleifend at. Proin iaculis semper libero
+                quis posuere. Mauris ultricies vel nunc non molestie. In quis ornare velit, vel
+                mollis felis. Quisque pulvinar, nunc in commodo bibendum, nisl nisi tincidunt
+                turpis, sit amet sodales lorem libero quis tortor. Curabitur at convallis lacus. </fo:block>
+      <fo:block> Proin aliquet libero ac ultrices ullamcorper. Mauris egestas nisl et
+                ullamcorper tristique. Mauris luctus pulvinar libero. Curabitur feugiat nisl eu nisi
+                ultrices, ut ultricies nisi pharetra. Pellentesque in rutrum lacus, nec faucibus
+                dolor. Ut rutrum augue hendrerit, laoreet magna interdum, maximus erat. Vestibulum
+                varius, est eget faucibus tincidunt, neque ante semper dolor, laoreet tincidunt ex
+                sapien a lacus. Phasellus euismod semper velit, non consequat nibh dapibus eget.
+                Etiam id nulla quis arcu tincidunt venenatis sit amet ut ex. Maecenas ut ante ac
+                quam cursus blandit. </fo:block>
+      <fo:block> Vivamus accumsan odio eget erat sagittis lobortis. Nullam et consequat
+                libero, ut semper neque. Ut sit amet lobortis est. Maecenas at mi et sapien
+                hendrerit laoreet vel eget arcu. Nulla ut ornare lacus. Curabitur vitae elementum
+                leo, non convallis erat. Sed ut dolor lacinia, iaculis ante quis, congue leo. </fo:block>
+      <fo:block> Mauris ornare elit vel mi mollis egestas. Morbi elementum nibh sed odio
+                pulvinar tristique. Sed laoreet risus eget ipsum posuere rutrum. Fusce est ex,
+                iaculis non congue in, finibus eu turpis. Pellentesque et purus tincidunt magna
+                ultrices rhoncus. Etiam quis aliquam tellus. Proin pharetra, arcu ac varius
+                porttitor, ipsum purus porttitor eros, eu malesuada ex tellus sed neque. Vivamus
+                facilisis dolor neque, ut suscipit lorem iaculis et. Quisque sit amet ex dictum
+                dolor vulputate posuere a a erat. </fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  
+  <fo:page-sequence master-reference="a4page-three-columns" font-family="Open sans, Arial, sans-serif">
+    <!-- Header contents -->
+    <fo:static-content flow-name="xsl-region-before">
+      <fo:block-container height="100%" display-align="center">
+        <fo:block text-align="center"><fo:inline font-family="Consolas, monospace">@column-count</fo:inline></fo:block>
+        <fo:block text-align="center">Text on <fo:inline font-weight="bold">three</fo:inline> columns</fo:block>
+      </fo:block-container>
+    </fo:static-content>
+    <!-- Footer contents -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:block>Reference: <fo:basic-link external-destination="https://www.w3.org/TR/xsl11/#column-count">https://www.w3.org/TR/xsl11/#column-count</fo:basic-link> (attribute)</fo:block>
+      <fo:block text-align="right">Page <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body" font-size="16pt" text-align="justify">
+      <fo:block text-align="center" font-size="48pt" font-weight="bold" color="#50276E">three column</fo:block>
+      <fo:block>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere
+                aliquet diam, nec fermentum leo tincidunt id. Integer nec urna condimentum, luctus
+                massa eu, malesuada lacus. Fusce convallis orci sed justo ultricies, ac dapibus
+                velit tristique. Donec eget odio quis libero rhoncus hendrerit at at tortor. Nullam
+                sit amet nisl eget ipsum ornare sagittis vel ac velit. Integer sit amet commodo
+                turpis. Phasellus quis faucibus orci, eget convallis arcu. Nunc aliquam blandit diam
+                sed mattis. Ut pretium aliquam arcu, porta luctus est consectetur non. Pellentesque
+                porta volutpat lorem, quis ullamcorper arcu ultrices vel. </fo:block>
+      <fo:block> Nullam tincidunt lorem nec velit mattis, in feugiat orci tristique. Morbi
+                laoreet hendrerit pulvinar. In neque nibh, dapibus at magna in, congue blandit nisl.
+                In aliquet est ex, pellentesque lobortis ex eleifend at. Proin iaculis semper libero
+                quis posuere. Mauris ultricies vel nunc non molestie. In quis ornare velit, vel
+                mollis felis. Quisque pulvinar, nunc in commodo bibendum, nisl nisi tincidunt
+                turpis, sit amet sodales lorem libero quis tortor. Curabitur at convallis lacus. </fo:block>
+      <fo:block> Proin aliquet libero ac ultrices ullamcorper. Mauris egestas nisl et
+                ullamcorper tristique. Mauris luctus pulvinar libero. Curabitur feugiat nisl eu nisi
+                ultrices, ut ultricies nisi pharetra. Pellentesque in rutrum lacus, nec faucibus
+                dolor. Ut rutrum augue hendrerit, laoreet magna interdum, maximus erat. Vestibulum
+                varius, est eget faucibus tincidunt, neque ante semper dolor, laoreet tincidunt ex
+                sapien a lacus. Phasellus euismod semper velit, non consequat nibh dapibus eget.
+                Etiam id nulla quis arcu tincidunt venenatis sit amet ut ex. Maecenas ut ante ac
+                quam cursus blandit. </fo:block>
+      <fo:block> Vivamus accumsan odio eget erat sagittis lobortis. Nullam et consequat
+                libero, ut semper neque. Ut sit amet lobortis est. Maecenas at mi et sapien
+                hendrerit laoreet vel eget arcu. Nulla ut ornare lacus. Curabitur vitae elementum
+                leo, non convallis erat. Sed ut dolor lacinia, iaculis ante quis, congue leo. </fo:block>
+      <fo:block> Mauris ornare elit vel mi mollis egestas. Morbi elementum nibh sed odio
+                pulvinar tristique. Sed laoreet risus eget ipsum posuere rutrum. Fusce est ex,
+                iaculis non congue in, finibus eu turpis. Pellentesque et purus tincidunt magna
+                ultrices rhoncus. Etiam quis aliquam tellus. Proin pharetra, arcu ac varius
+                porttitor, ipsum purus porttitor eros, eu malesuada ex tellus sed neque. Vivamus
+                facilisis dolor neque, ut suscipit lorem iaculis et. Quisque sit amet ex dictum
+                dolor vulputate posuere a a erat. </fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+</fo:root>

@@ -1,36 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
-    <fo:layout-master-set>
-        <fo:simple-page-master master-name="a4page" page-width="21cm" page-height="29.7cm">
-            <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm" />
-            <fo:region-before extent="1.5cm" /> 
-            <fo:region-after extent="1.5cm" />
-            <fo:region-start extent="1.5cm" />
-            <fo:region-end extent="1.5cm" />
-        </fo:simple-page-master>
-    </fo:layout-master-set>
-    <fo:page-sequence master-reference="a4page" font-family="Open sans, Arial, sans-serif">
-        
-        <fo:static-content flow-name="xsl-region-before">
-            <fo:block text-align="center"><fo:inline font-family="Consolas, monospace"
-                    >&lt;fo:float&gt;</fo:inline></fo:block>
-        </fo:static-content>
-        <fo:static-content flow-name="xsl-region-after">
-            <fo:block><fo:basic-link external-destination="https://www.w3.org/TR/xsl11/#fo_float">https://www.w3.org/TR/xsl11/#fo_float</fo:basic-link></fo:block>
-            <fo:block text-align="right">Page <fo:page-number/></fo:block>
-        </fo:static-content>
-        <fo:flow flow-name="xsl-region-body" font-size="16pt" text-align="justify">
-            
-            <fo:block text-align="center" font-size="24pt" font-weight="bold" color="#50276E"
-                    ><fo:inline>fo:float</fo:inline></fo:block>
-            
-            <fo:block font-weight="bold" color="#886CA6">1. Float on start (left)</fo:block>
-            <fo:float float="start">
-                <fo:block>
-                    <fo:external-graphic src="../_assets/sunflower_reduced.png" padding="0.5cm"/>
-                </fo:block>
-            </fo:float>
-            <fo:block> Cras quis fermentum dui. Nullam a eleifend ex. Nunc nec lorem ac dui ultrices
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="a4page" page-width="21cm" page-height="29.7cm">
+      <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm"/>
+      <fo:region-before extent="1.5cm"/>
+      <fo:region-after extent="1.5cm"/>
+      <fo:region-start extent="1.5cm"/>
+      <fo:region-end extent="1.5cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+  
+  <fo:page-sequence master-reference="a4page" font-family="Open sans, Arial, sans-serif">
+    
+    <fo:static-content flow-name="xsl-region-before">
+      <fo:block-container height="100%" display-align="center">
+        <fo:block text-align="center">
+          <fo:inline font-family="Consolas, monospace">&lt;fo:float&gt;</fo:inline>
+        </fo:block>
+      </fo:block-container>
+    </fo:static-content>
+    
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:block>See reference: <fo:basic-link external-destination="https://www.w3.org/TR/xsl11/#fo_float">https://www.w3.org/TR/xsl11/#fo_float</fo:basic-link></fo:block>
+      <fo:block text-align="right">Page <fo:page-number/></fo:block>
+    </fo:static-content>
+    
+    <fo:flow flow-name="xsl-region-body" font-size="16pt" text-align="justify">
+      <fo:block text-align="center" font-size="24pt" font-weight="bold" color="#50276E">
+        <fo:inline font-family="Consolas, monospace">fo:float</fo:inline>
+      </fo:block>
+      <fo:block font-weight="bold" color="#886CA6">1. Float on start (left)</fo:block>
+      <fo:float float="start">
+        <fo:block>
+          <fo:external-graphic src="../_assets/sunflower_reduced.png" padding="0.5cm"/>
+        </fo:block>
+      </fo:float>
+      <fo:block> Cras quis fermentum dui. Nullam a eleifend ex. Nunc nec lorem ac dui ultrices
                 maximus quis in sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                 viverra enim elit, quis mollis magna malesuada id. Duis vitae mi fermentum,
                 scelerisque sapien vitae, vulputate diam. Nulla odio est, ornare quis tortor et,
@@ -42,14 +47,13 @@
                 placerat nulla. Etiam elementum tortor at posuere ornare. Aliquam accumsan, augue
                 quis tincidunt porta, lacus magna gravida augue, sit amet semper odio quam at velit.
             </fo:block>
-            
-            <fo:block font-weight="bold" color="#886CA6">2. Float on end (right)</fo:block>
-            <fo:float float="end">
-                <fo:block>
-                    <fo:external-graphic src="../_assets/sunflower_reduced.png" padding="0.5cm"/>
-                </fo:block>
-            </fo:float>
-            <fo:block>Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla neque
+      <fo:block font-weight="bold" color="#886CA6">2. Float on end (right)</fo:block>
+      <fo:float float="end">
+        <fo:block>
+          <fo:external-graphic src="../_assets/sunflower_reduced.png" padding="0.5cm"/>
+        </fo:block>
+      </fo:float>
+      <fo:block>Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla neque
                 sapien, commodo sed leo id, cursus luctus purus. Morbi ac finibus augue. Etiam sit
                 amet eleifend neque. Suspendisse libero nisi, blandit nec ante sit amet, mollis
                 imperdiet ante. Aliquam erat volutpat. Nulla interdum dapibus ante, sit amet
@@ -57,13 +61,13 @@
                 efficitur. Praesent dictum scelerisque hendrerit. Curabitur malesuada consequat
                 dignissim. Vivamus leo mi, tincidunt nec eleifend non, pharetra in quam. Suspendisse
                 quis ornare arcu. Sed quis rutrum odio. </fo:block>
-            <fo:block font-weight="bold" color="#886CA6">3. Float inside</fo:block>
-            <fo:float float="inside">
-                <fo:block>
-                    <fo:external-graphic src="../_assets/sunflower_reduced.png" padding="0.5cm"/>
-                </fo:block>
-            </fo:float>
-            <fo:block> In dapibus gravida mi, at iaculis justo euismod vel. Integer quis euismod
+      <fo:block font-weight="bold" color="#886CA6">3. Float inside</fo:block>
+      <fo:float float="inside">
+        <fo:block>
+          <fo:external-graphic src="../_assets/sunflower_reduced.png" padding="0.5cm"/>
+        </fo:block>
+      </fo:float>
+      <fo:block> In dapibus gravida mi, at iaculis justo euismod vel. Integer quis euismod
                 quam. Quisque interdum nisl eget consequat rhoncus. Nam dignissim purus id enim
                 commodo tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
                 felis nulla, imperdiet varius tincidunt eu, elementum sit amet felis. Nullam
@@ -71,14 +75,14 @@
                 tellus id augue. Integer nec orci sodales, pellentesque leo non, condimentum dui.
                 Suspendisse in condimentum nisi. Mauris accumsan egestas suscipit. Proin venenatis
                 urna odio, fermentum pharetra tellus vehicula et. </fo:block>
-            <fo:block font-weight="bold" color="#886CA6">3. Float left+right</fo:block>
-            <fo:float float="left">
-                <fo:block>LEFT</fo:block>
-            </fo:float>
-            <fo:float float="right">
-                <fo:block>RIGHT</fo:block>
-            </fo:float>
-            <fo:block clear="both">Not floated.</fo:block>
-        </fo:flow>
-    </fo:page-sequence>
+      <fo:block font-weight="bold" color="#886CA6">3. Float left+right</fo:block>
+      <fo:float float="left">
+        <fo:block>LEFT</fo:block>
+      </fo:float>
+      <fo:float float="right">
+        <fo:block>RIGHT</fo:block>
+      </fo:float>
+      <fo:block clear="both">Not floated.</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
 </fo:root>
