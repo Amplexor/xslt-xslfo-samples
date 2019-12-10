@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:axf="http://www.antennahouse.com/names/XSL/Extensions">
+  
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="a4page" page-width="21cm" page-height="29.7cm">
+      <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm"/>
+      <fo:region-before extent="1.5cm"/>
+      <fo:region-after extent="1.5cm"/>
+      <fo:region-start extent="1.5cm"/>
+      <fo:region-end extent="1.5cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+  
+  <fo:page-sequence master-reference="a4page" font-family="Open sans, Arial, sans-serif">
+    
+    <!-- Header contents -->
+    <fo:static-content flow-name="xsl-region-before">
+      <fo:block-container height="100%" display-align="center">
+        <fo:block text-align="center">
+          <fo:inline font-family="Consolas, monospace">@axf:outline-level</fo:inline>, <fo:inline font-family="Consolas, monospace">@axf:outline-title</fo:inline>, <fo:inline font-family="Consolas, monospace">@axf:outline-expand</fo:inline>
+        </fo:block>
+      </fo:block-container>
+    </fo:static-content>
+    
+    <!-- Footer contents -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:block>See reference: 
+        <fo:basic-link external-destination="https://www.antennahouse.com/product/ahf66/ahf-ext.html#bookmark-and-link">https://www.antennahouse.com/product/ahf66/ahf-ext.html#bookmark-and-link</fo:basic-link>
+      </fo:block>
+      <fo:block text-align="right">Page <fo:page-number/></fo:block>
+    </fo:static-content>
+    
+    
+    <!-- Main content -->
+    <fo:flow flow-name="xsl-region-body" font-size="16pt" text-align="justify">
+      <!-- Main title -->
+      <fo:block text-align="center" font-size="24pt" font-weight="bold" color="#50276E">
+        <fo:inline font-family="Consolas, monospace">axf:outline-*</fo:inline>
+      </fo:block>
+      <fo:block>Antenna House offers a very convenient way to create a bookmark tree in the output PDF, without bothering in doing a first processing 
+      to create the fo:bookmark-tree.</fo:block>
+      
+      <fo:block text-align="center" font-size="32pt" font-weight="bold" color="#50276E" id="chap_1" axf:outline-level="1" axf:outline-title="Chapter 1" axf:outline-expand="false">Chapter 1</fo:block>
+      <fo:block id="block_1_1" axf:outline-level="2" axf:outline-title="Lorem ipsum dolor sit amet...">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere
+        aliquet diam, nec fermentum leo tincidunt id. Integer nec urna condimentum, luctus
+        massa eu, malesuada lacus. Fusce convallis orci sed justo ultricies, ac dapibus
+        velit tristique. Donec eget odio quis libero rhoncus hendrerit at at tortor. Nullam
+        sit amet nisl eget ipsum ornare sagittis vel ac velit. Integer sit amet commodo
+        turpis. Phasellus quis faucibus orci, eget convallis arcu. Nunc aliquam blandit diam
+        sed mattis. Ut pretium aliquam arcu, porta luctus est consectetur non. Pellentesque
+        porta volutpat lorem, quis ullamcorper arcu ultrices vel. </fo:block>
+      <fo:block id="block_1_2" axf:outline-level="2" axf:outline-title="Nullam tincidunt lorem nec...">Nullam tincidunt lorem nec velit mattis, in feugiat orci tristique. Morbi
+        laoreet hendrerit pulvinar. In neque nibh, dapibus at magna in, congue blandit nisl.
+        In aliquet est ex, pellentesque lobortis ex eleifend at. Proin iaculis semper libero
+        quis posuere. Mauris ultricies vel nunc non molestie. In quis ornare velit, vel
+        mollis felis. Quisque pulvinar, nunc in commodo bibendum, nisl nisi tincidunt
+        turpis, sit amet sodales lorem libero quis tortor. Curabitur at convallis lacus. </fo:block>
+      <fo:block id="block_1_3" axf:outline-level="2" axf:outline-title="Proin aliquet libero ac...">Proin aliquet libero ac ultrices ullamcorper. Mauris egestas nisl et
+        ullamcorper tristique. Mauris luctus pulvinar libero. Curabitur feugiat nisl eu nisi
+        ultrices, ut ultricies nisi pharetra. Pellentesque in rutrum lacus, nec faucibus
+        dolor. Ut rutrum augue hendrerit, laoreet magna interdum, maximus erat. Vestibulum
+        varius, est eget faucibus tincidunt, neque ante semper dolor, laoreet tincidunt ex
+        sapien a lacus. Phasellus euismod semper velit, non consequat nibh dapibus eget.
+        Etiam id nulla quis arcu tincidunt venenatis sit amet ut ex. Maecenas ut ante ac
+        quam cursus blandit. </fo:block>
+      <fo:block id="block_1_4" axf:outline-level="2" axf:outline-title="Vivamus accumsan odio eget...">Vivamus accumsan odio eget erat sagittis lobortis. Nullam et consequat
+        libero, ut semper neque. Ut sit amet lobortis est. Maecenas at mi et sapien
+        hendrerit laoreet vel eget arcu. Nulla ut ornare lacus. Curabitur vitae elementum
+        leo, non convallis erat. Sed ut dolor lacinia, iaculis ante quis, congue leo. </fo:block>
+      <fo:block id="block_1_5" axf:outline-level="2" axf:outline-title="Mauris ornare elit vel...">Mauris ornare elit vel mi mollis egestas. Morbi elementum nibh sed odio
+        pulvinar tristique. Sed laoreet risus eget ipsum posuere rutrum. Fusce est ex,
+        iaculis non congue in, finibus eu turpis. Pellentesque et purus tincidunt magna
+        ultrices rhoncus. Etiam quis aliquam tellus. Proin pharetra, arcu ac varius
+        porttitor, ipsum purus porttitor eros, eu malesuada ex tellus sed neque. Vivamus
+        facilisis dolor neque, ut suscipit lorem iaculis et. Quisque sit amet ex dictum
+        dolor vulputate posuere a a erat. </fo:block>
+      <fo:block text-align="center" font-size="32pt" font-weight="bold" color="#50276E" id="chap_2" page-break-before="always" axf:outline-level="1" axf:outline-title="Chapter 2" axf:outline-expand="false">Chapter 2</fo:block>
+      <fo:block id="block_2_1" axf:outline-level="2" axf:outline-title="Lorem ipsum dolor sit...">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat
+        molestie leo, ac vestibulum lacus aliquet a. Integer sodales ex odio, eget euismod
+        elit sollicitudin ut. Sed et tortor posuere, semper nisi ac, dignissim magna. Donec
+        pretium elit a fermentum iaculis. Fusce scelerisque magna libero, eget cursus ante
+        interdum a. Fusce fringilla urna at neque blandit bibendum. Aliquam erat
+        volutpat.</fo:block>
+      <fo:block id="block_2_2" axf:outline-level="2" axf:outline-title="Aliquam ultricies est ipsum...">Aliquam ultricies est ipsum, et faucibus augue porttitor at. Ut sagittis, nunc
+        et faucibus fermentum, mauris nisl feugiat massa, eget cursus dui tortor ac quam. In
+        faucibus vestibulum metus in gravida. Pellentesque rhoncus tellus varius augue
+        tristique mollis. Maecenas aliquam sagittis mi non porta. Donec non velit faucibus
+        metus blandit fringilla eget quis ante. Duis pulvinar arcu ac lectus lobortis
+        interdum. Sed commodo nisi ac purus faucibus pretium. Integer in risus
+        quam.</fo:block>
+      <fo:block id="block_2_3" axf:outline-level="2" axf:outline-title="Etiam sit amet mauris...">Etiam sit amet mauris erat. Curabitur eros ipsum, porta vitae ornare ut,
+        bibendum nec leo. Sed luctus viverra fringilla. Phasellus venenatis et mauris et
+        finibus. Aliquam ultrices accumsan sem nec ultricies. Aliquam ac vulputate sapien.
+        Vivamus et ex sit amet ipsum varius tincidunt eget nec eros. Aenean semper ultricies
+        interdum. Sed a tincidunt tellus, eu sodales enim. Maecenas porttitor nibh placerat
+        nibh vehicula pretium.</fo:block>
+      <fo:block id="block_2_4" axf:outline-level="2" axf:outline-title="Quisque vel nulla congue...">Quisque vel nulla congue orci ullamcorper rutrum sit amet ut dolor. Fusce
+        ligula urna, dapibus quis nisl eu, volutpat gravida mi. In tempor, quam sit amet
+        varius pretium, eros ipsum mollis metus, sed tempor mauris dui vel tellus.
+        Vestibulum congue bibendum lorem id scelerisque. Duis pharetra felis dui, non porta
+        urna laoreet in. Praesent vel fringilla metus. In dignissim massa elit, quis
+        ullamcorper massa rhoncus non. In in molestie mauris. Integer blandit, diam vel
+        porta aliquam, lectus nibh hendrerit lacus, in pretium velit nulla id nibh. Etiam eu
+        dapibus nulla. Vestibulum gravida, lectus a volutpat faucibus, mauris felis
+        sollicitudin purus, vitae sollicitudin est nulla in leo. Ut lacinia turpis lorem,
+        nec pharetra arcu fermentum vitae. Nulla luctus a lacus eget sodales. In tincidunt
+        nulla eros, id varius metus semper sit amet. Etiam porta diam tortor, non mattis
+        magna blandit eu.</fo:block>
+      <fo:block id="block_2_5" axf:outline-level="2" axf:outline-title="Aliquam erat volutpat.">Aliquam erat volutpat. Aliquam ut dolor eget nunc interdum dignissim. Nam
+        venenatis dictum enim a accumsan. Integer in quam at nisi accumsan aliquam a a
+        nulla. Donec convallis justo non velit dictum, in tempor justo venenatis. Fusce
+        lobortis diam in metus sagittis, eu tristique nibh viverra. Nulla ultrices diam eu
+        dictum dignissim. Nam volutpat erat ac metus facilisis, in porta justo placerat.
+        Cras elementum, ipsum vitae euismod varius, quam mi faucibus enim, in ultricies sem
+        orci volutpat eros. Vivamus magna nibh, pretium non luctus sed, tincidunt quis enim.
+        Aenean eleifend vulputate nisl non commodo. Praesent sollicitudin iaculis mauris
+        aliquet bibendum. In egestas ipsum in scelerisque interdum. Mauris in euismod quam,
+        sed rutrum nunc.</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+</fo:root>
