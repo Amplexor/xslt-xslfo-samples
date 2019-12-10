@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
-    <fo:layout-master-set>
-        <fo:simple-page-master master-name="a4page" page-width="21cm" page-height="29.7cm">
-            <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm" />
-            <fo:region-before extent="1.5cm" /> 
-            <fo:region-after extent="1.5cm" />
-            <fo:region-start extent="1.5cm" />
-            <fo:region-end extent="1.5cm" />
-        </fo:simple-page-master>
-    </fo:layout-master-set>
-    <fo:page-sequence master-reference="a4page" font-family="Open sans, Arial, sans-serif">
-        
-        <fo:static-content flow-name="xsl-region-before">
-            <fo:block text-align="center"><fo:inline font-family="Consolas, monospace">&lt;fo:initial-property-set&gt;</fo:inline></fo:block>
-        </fo:static-content>
-        <fo:static-content flow-name="xsl-region-after">
-            <fo:block><fo:basic-link external-destination="https://www.w3.org/TR/xsl11/#fo_initial-property-set">https://www.w3.org/TR/xsl11/#fo_initial-property-set</fo:basic-link></fo:block>
-            <fo:block text-align="right">Page <fo:page-number/></fo:block>
-        </fo:static-content>
-        
-        
-        <fo:flow flow-name="xsl-region-body" font-size="16pt" text-align="justify">
-            
-            <fo:block text-align="center" font-size="24pt" font-weight="bold" color="#50276E"><fo:inline>fo:initial-property-set</fo:inline></fo:block>
-            
-            <fo:block font-style="italic" font-size="small">Please note Apache currently doesn't support <fo:inline font-family="Consolas, monospace">&lt;fo:initial-property-set&gt;</fo:inline> (see https://xmlgraphics.apache.org/fop/compliance.html).</fo:block>
-            <fo:block>
-                <fo:initial-property-set font-style="italic" />
-                Duis viverra sem porttitor nisl vestibulum facilisis. Nulla eleifend faucibus auctor. Ut euismod quam eget aliquam pulvinar. Nullam dictum imperdiet augue at finibus. Etiam mauris est, auctor vel velit ac, sagittis viverra justo. Integer erat enim, blandit eget bibendum sit amet, bibendum efficitur ligula. Proin massa arcu, pretium sed felis ut, rutrum egestas urna. Praesent lacinia justo a leo auctor tristique. In varius blandit lorem nec elementum. Quisque dui risus, cursus in sodales non, mattis eget dolor. Nullam nec cursus velit, at fermentum neque. Nam tincidunt, nisi eget tincidunt congue, justo urna porttitor eros, id molestie est sem ut ligula. Praesent eget elit vel risus pharetra aliquet. Vivamus id ante et diam luctus laoreet venenatis iaculis dolor. Ut velit mauris, dignissim quis sapien ac, convallis bibendum orci.
-            </fo:block>
-            
-        </fo:flow>
-    </fo:page-sequence>
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="a4page" page-width="21cm" page-height="29.7cm">
+      <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm"/>
+      <fo:region-before extent="1.5cm"/>
+      <fo:region-after extent="1.5cm"/>
+      <fo:region-start extent="1.5cm"/>
+      <fo:region-end extent="1.5cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+  
+  <fo:page-sequence master-reference="a4page" font-family="Open sans, Arial, sans-serif">
+    <!-- Header contents -->
+    <fo:static-content flow-name="xsl-region-before">
+      <fo:block-container height="100%" display-align="center">
+        <fo:block text-align="center">
+          <fo:inline font-family="Consolas, monospace">&lt;fo:initial-property-set&gt;</fo:inline>
+        </fo:block>
+      </fo:block-container>
+    </fo:static-content>
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:block>
+        <fo:basic-link external-destination="https://www.w3.org/TR/xsl11/#fo_initial-property-set">https://www.w3.org/TR/xsl11/#fo_initial-property-set</fo:basic-link>
+      </fo:block>
+      <fo:block text-align="right">Page <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body" font-size="16pt" text-align="justify">
+      <fo:block text-align="center" font-size="24pt" font-weight="bold" color="#50276E">
+        <fo:inline>fo:initial-property-set</fo:inline>
+      </fo:block>
+      <fo:block font-style="italic" font-size="small">Please note Apache FOP currently doesn't support <fo:inline font-family="Consolas, monospace">&lt;fo:initial-property-set&gt;</fo:inline> (see https://xmlgraphics.apache.org/fop/compliance.html).</fo:block>
+      <fo:block>
+        <fo:initial-property-set font-style="italic"/>
+        Duis viverra sem porttitor nisl vestibulum facilisis. Nulla eleifend faucibus auctor. Ut euismod quam eget aliquam pulvinar. Nullam dictum imperdiet augue at finibus. Etiam mauris est, auctor vel velit ac, sagittis viverra justo. Integer erat enim, blandit eget bibendum sit amet, bibendum efficitur ligula. Proin massa arcu, pretium sed felis ut, rutrum egestas urna. Praesent lacinia justo a leo auctor tristique. In varius blandit lorem nec elementum. Quisque dui risus, cursus in sodales non, mattis eget dolor. Nullam nec cursus velit, at fermentum neque. Nam tincidunt, nisi eget tincidunt congue, justo urna porttitor eros, id molestie est sem ut ligula. Praesent eget elit vel risus pharetra aliquet. Vivamus id ante et diam luctus laoreet venenatis iaculis dolor. Ut velit mauris, dignissim quis sapien ac, convallis bibendum orci.
+      </fo:block>
+    </fo:flow>
+  </fo:page-sequence>
 </fo:root>
