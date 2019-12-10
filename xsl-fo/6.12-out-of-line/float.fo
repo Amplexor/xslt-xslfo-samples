@@ -35,7 +35,7 @@
           <fo:external-graphic src="../_assets/sunflower_reduced.png" padding="0.5cm"/>
         </fo:block>
       </fo:float>
-      <fo:block> Cras quis fermentum dui. Nullam a eleifend ex. Nunc nec lorem ac dui ultrices
+      <fo:block>Cras quis fermentum dui. Nullam a eleifend ex. Nunc nec lorem ac dui ultrices
                 maximus quis in sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                 viverra enim elit, quis mollis magna malesuada id. Duis vitae mi fermentum,
                 scelerisque sapien vitae, vulputate diam. Nulla odio est, ornare quis tortor et,
