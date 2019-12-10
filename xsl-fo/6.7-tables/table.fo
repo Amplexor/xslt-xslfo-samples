@@ -1,132 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
-    <fo:layout-master-set>
-        <fo:simple-page-master master-name="a4page" page-width="21cm" page-height="29.7cm">
-            <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm" />
-            <fo:region-before extent="1.5cm" />
-            <fo:region-after extent="1.5cm" />
-            <fo:region-start extent="1.5cm" />
-            <fo:region-end extent="1.5cm" />
-        </fo:simple-page-master>
-        <fo:page-sequence-master master-name="single-a4">
-            <fo:single-page-master-reference master-reference="a4page"/>
-        </fo:page-sequence-master>
-    </fo:layout-master-set>
-    <fo:page-sequence master-reference="single-a4">
-        <fo:static-content flow-name="xsl-region-before">
-            <fo:block border-bottom="2pt solid black" text-align="right">Header</fo:block>
-        </fo:static-content>
-        <fo:static-content flow-name="xsl-region-after">
-            <fo:block border-top="2pt solid black" text-align="center">https://www.w3.org/TR/xsl11/#fo_table</fo:block>
-            <fo:block text-align="right">Page <fo:page-number/></fo:block>
-        </fo:static-content>
-        <fo:flow flow-name="xsl-region-body" font-size="20pt" font-family="Open sans" text-align="justify">
-            <fo:block text-align="center" font-size="32pt" font-weight="bold" color="#50276E"
-                >The most simple fo:table</fo:block>
-            
-            <fo:table>
-                <fo:table-column column-width="5cm"/>
-                <fo:table-column column-width="5cm" />
-                <fo:table-body>
-                  <fo:table-row>
-                      <fo:table-cell><fo:block>Row 1, col 1</fo:block></fo:table-cell>
-                      <fo:table-cell><fo:block>Row 1, col 2</fo:block></fo:table-cell>
-                  </fo:table-row>
-                    <fo:table-row>
-                        <fo:table-cell><fo:block>Row 2, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>Row 2, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                </fo:table-body>
-            </fo:table>
-            <fo:block text-align="center" font-size="32pt" font-weight="bold" color="#50276E"
-                >The same, with borders</fo:block>
-            <fo:table border="1pt solid black">
-                <fo:table-column column-width="5cm" border="1pt dotted black"/>
-                <fo:table-column column-width="5cm" border="1pt dotted black" />
-                <fo:table-body>
-                    <fo:table-row border="1pt dashed #555555">
-                        <fo:table-cell><fo:block>Row 1, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>Row 1, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row>
-                        <fo:table-cell><fo:block>Row 2, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>Row 2, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                </fo:table-body>
-            </fo:table>
-            <fo:block text-align="center" font-size="32pt" font-weight="bold" color="#50276E"
-                >With table header / footers</fo:block>
-            <fo:block>Please note header and footer are repeated at page breaks.</fo:block>
-            <fo:table border="1pt solid black">
-                <fo:table-column column-width="5cm" border="1pt dotted black"/>
-                <fo:table-column column-width="5cm" border="1pt dotted black" />
-                <fo:table-header border="2pt solid black" background-color="#777777">
-                    <fo:table-cell><fo:block font-weight="bold" text-align="center">Header, col 1</fo:block></fo:table-cell>
-                    <fo:table-cell><fo:block font-weight="bold" text-align="center">Header, col 2</fo:block></fo:table-cell>
-                </fo:table-header>
-                <fo:table-footer border="2pt solid black" background-color="#777777">
-                    <fo:table-cell><fo:block font-weight="bold">Footer, col 1</fo:block></fo:table-cell>
-                    <fo:table-cell><fo:block font-weight="bold">Footer, col 2</fo:block></fo:table-cell>
-                </fo:table-footer>
-                <fo:table-body>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>Row 1, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>Row 1, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>Row 2, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>Row 2, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>etc, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>etc, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>etc, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>etc, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>etc, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>etc, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>etc, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>etc, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>etc, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>etc, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>etc, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>etc, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>etc, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>etc, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>etc, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>etc, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>etc, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>etc, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>etc, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>etc, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>etc, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>etc, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                    <fo:table-row border="1pt dotted #555555">
-                        <fo:table-cell><fo:block>etc, col 1</fo:block></fo:table-cell>
-                        <fo:table-cell><fo:block>etc, col 2</fo:block></fo:table-cell>
-                    </fo:table-row>
-                </fo:table-body>
-            </fo:table>
-        </fo:flow>
-    </fo:page-sequence>
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="a4page" page-width="21cm" page-height="29.7cm">
+      <fo:region-body margin-left="2cm" margin-right="2cm" margin-top="4cm" margin-bottom="4cm"/>
+      <fo:region-before extent="1.5cm"/>
+      <fo:region-after extent="1.5cm"/>
+      <fo:region-start extent="1.5cm"/>
+      <fo:region-end extent="1.5cm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+  
+  <fo:page-sequence master-reference="a4page" font-family="Open sans, Arial, sans-serif">
+    
+    <!-- Header contents -->
+    <fo:static-content flow-name="xsl-region-before">
+      <fo:block-container height="100%" display-align="center">
+        <fo:block text-align="center">
+          <fo:inline font-family="Consolas, monospace">&lt;fo:table&gt;</fo:inline>
+        </fo:block>
+      </fo:block-container>
+    </fo:static-content>
+    
+    <!-- Footer contents -->
+    <fo:static-content flow-name="xsl-region-after">
+      <fo:block>
+        <fo:basic-link external-destination="https://www.w3.org/TR/xsl11/#fo_table">https://www.w3.org/TR/xsl11/#fo_table</fo:basic-link>
+      </fo:block>
+      <fo:block text-align="right">Page <fo:page-number/></fo:block>
+    </fo:static-content>
+    
+    <fo:flow flow-name="xsl-region-body" font-size="16pt" text-align="justify">
+      <fo:block text-align="center" font-size="24pt" font-weight="bold" color="#50276E">
+        <fo:inline font-family="Consolas, monospace">fo:table</fo:inline>
+      </fo:block>
+      
+      <fo:block font-weight="bold" color="#886CA6">1. The most simple fo:table</fo:block>
+      <fo:table>
+        <fo:table-column column-width="5cm"/>
+        <fo:table-column column-width="5cm"/>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell>
+              <fo:block>Row 1, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>Row 1, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell>
+              <fo:block>Row 2, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>Row 2, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell>
+              <fo:block>Row 3, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>Row 3, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+      <fo:block font-weight="bold" color="#886CA6" margin-top="2cm">2. The same, with borders</fo:block>
+      <fo:table border="1pt solid black">
+        <fo:table-column column-width="5cm" border="1pt dotted black"/>
+        <fo:table-column column-width="5cm" border="1pt dotted black"/>
+        <fo:table-body>
+          <fo:table-row border="1pt dashed #555555">
+            <fo:table-cell>
+              <fo:block>Row 1, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>Row 1, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell>
+              <fo:block>Row 2, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>Row 2, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell>
+              <fo:block>Row 3, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>Row 3, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+      <fo:block font-weight="bold" color="#886CA6" margin-top="2cm">3. With table header / footers</fo:block>
+      <fo:block>Please note header and footer will be repeated at page breaks.</fo:block>
+      <fo:table border="1pt solid black">
+        <fo:table-column column-width="5cm" border="1pt dotted black"/>
+        <fo:table-column column-width="5cm" border="1pt dotted black"/>
+        <fo:table-header border="2pt solid black" background-color="#777777">
+          <fo:table-cell>
+            <fo:block font-weight="bold" text-align="center">Header, col 1</fo:block>
+          </fo:table-cell>
+          <fo:table-cell>
+            <fo:block font-weight="bold" text-align="center">Header, col 2</fo:block>
+          </fo:table-cell>
+        </fo:table-header>
+        <fo:table-footer border="2pt solid black" background-color="#777777">
+          <fo:table-cell>
+            <fo:block font-weight="bold">Footer, col 1</fo:block>
+          </fo:table-cell>
+          <fo:table-cell>
+            <fo:block font-weight="bold">Footer, col 2</fo:block>
+          </fo:table-cell>
+        </fo:table-footer>
+        <fo:table-body>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>Row 1, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>Row 1, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>Row 2, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>Row 2, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>etc, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>etc, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>etc, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>etc, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>etc, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>etc, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>etc, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>etc, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>etc, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>etc, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>etc, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>etc, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>etc, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>etc, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>etc, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>etc, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>etc, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>etc, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>etc, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>etc, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>etc, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>etc, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row border="1pt dotted #555555">
+            <fo:table-cell>
+              <fo:block>etc, col 1</fo:block>
+            </fo:table-cell>
+            <fo:table-cell>
+              <fo:block>etc, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:flow>
+  </fo:page-sequence>
 </fo:root>
