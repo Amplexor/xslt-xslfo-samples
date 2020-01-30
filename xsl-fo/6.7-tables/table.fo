@@ -96,7 +96,7 @@
           </fo:table-row>
         </fo:table-body>
       </fo:table>
-      <fo:block font-weight="bold" color="#886CA6" margin-top="2cm">3. With table header / footers</fo:block>
+      <fo:block font-weight="bold" color="#886CA6" margin-top="1.5cm">3. With table header / footers</fo:block>
       <fo:block>Please note header and footer will be repeated at page breaks.</fo:block>
       <fo:table border="1pt solid black">
         <fo:table-column column-width="5cm" border="1pt dotted black"/>
@@ -228,6 +228,48 @@
             </fo:table-cell>
             <fo:table-cell>
               <fo:block>etc, col 2</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+      
+      <fo:block font-weight="bold" color="#886CA6" margin-top="1.5cm">4. Managing alignments: <fo:inline font-family="Consolas, monospace">@text-align</fo:inline>, <fo:inline font-family="Consolas, monospace">@display-align</fo:inline></fo:block>
+      <fo:table>
+        <fo:table-column column-width="5cm" border="1pt dotted #555555"/>
+        <fo:table-column column-width="5cm" border="1pt dotted #555555"/>
+        <fo:table-column column-width="5cm" border="1pt dotted #555555"/>
+        <fo:table-body>
+          <fo:table-row height="2cm" border="1pt dotted #555555">
+            <fo:table-cell text-align="left" display-align="before">
+              <fo:block>top left</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="center" display-align="before">
+              <fo:block>top center</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="right" display-align="before">
+              <fo:block>top right</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row height="2cm" border="1pt dotted #555555">
+            <fo:table-cell text-align="left" display-align="center">
+               <fo:block>middle left</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="center" display-align="center">
+              <fo:block>middle center</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="right" display-align="center">
+              <fo:block>middle right</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row height="2cm" border="1pt dotted #555555">
+            <fo:table-cell text-align="left" display-align="after">
+              <fo:block>bottom left</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="center" display-align="after">
+              <fo:block>bottom center</fo:block>
+            </fo:table-cell>
+            <fo:table-cell text-align="right" display-align="after">
+              <fo:block>bottom right</fo:block>
             </fo:table-cell>
           </fo:table-row>
         </fo:table-body>
